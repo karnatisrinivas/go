@@ -3,11 +3,9 @@ on:
   push:
     branches:
       - newbranch
-env:
-  GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
 jobs:
   create-pull-request:
-    permissions: read-all|write-all
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
@@ -18,3 +16,4 @@ jobs:
           destination_branch: "main"
           pr_label: "This PR is automated"
           pr_title: " Simple automated PR"
+          github_token: ${{ secrets.GITHUB_TOKEN }}
