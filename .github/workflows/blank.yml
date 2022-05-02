@@ -3,7 +3,8 @@ on:
   push:
     branches:
       - newbranch
-
+env:
+  GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 jobs:
   create-pull-request:
     runs-on: ubuntu-latest
